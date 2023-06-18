@@ -1,0 +1,28 @@
+<div class="category_list">
+<button class="category_button"> <a href="#">Immobilier</a> </button>
+<button class="category_button"> <a href="#">Véhicules</a> </button>
+<button class="category_button"> <a href="#">Vacances</a> </button>
+<button class="category_button"> <a href="#">Emploi</a> </button>
+<button class="category_button"> <a href="#">Mode</a> </button>
+<button class="category_button"> <a href="#">Maison</a> </button>
+<button class="category_button"> <a href="#">Multimédia</a> </button>
+<button class="category_button"> <a href="#">Loisirs</a> </button>
+<button class="category_button"> <a href="#">Matériel Professionnel</a> </button>
+<button class="category_button"> <a href="#">Autres</a> </button>
+</div>
+
+
+
+
+
+nav:
+
+<nav>
+<a href="#">LOGO</a>
+
+<div>
+<a class="login" href="#">Favoris</a>
+<a class="login" href="#">Messages</a>
+<a class="login" href="#">Se connecter</a>
+</div>
+</nav>
