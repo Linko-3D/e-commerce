@@ -51,6 +51,7 @@ header {
     padding-left: 170px;
     padding-right: 170px;
     position: fixed;
+    z-index: 9999;
     backdrop-filter: blur(10px);
 }
 
