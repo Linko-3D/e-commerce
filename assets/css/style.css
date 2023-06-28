@@ -1,7 +1,9 @@
 body {
     margin: 0px;
-    background-color: #eff1f5;
+    background-color:  #21262E;
+    /* background-color: #eff1f5; */
     color: #4a5365;
+    color: rgb(224, 224, 224);
 }
 
 body, select, option {
@@ -39,11 +41,17 @@ h3 {
     font-size: 19px;
     color: #546b99;
 }
-  
+
+header, footer {
+    background-color: rgba(37, 43, 52, 0.75);
+}
+
 header {
-    background-color: #3E8ECC;
+    /* background-color: #3E8ECC; */
     padding-left: 170px;
     padding-right: 170px;
+    position: fixed;
+    backdrop-filter: blur(10px);
 }
 
 .padding {
@@ -53,8 +61,7 @@ header {
 
 
 .container {
-    padding-left: 100px;
-    padding-right: 100px;
+    justify-content: center;
 }
 
 
@@ -95,15 +102,21 @@ select, .category, .category_active, .submit_ad, .favorite {
 .card {
     border-radius: 12px;
     width: 300px;
-    background-color: white;
-    color: #4a5365;
+    background-color: rgb(54, 61, 74);
+    color: rgb(224, 224, 224);
+    border: 1px solid rgb(29, 34, 41);
+    transition: all ease .3s;
 }
 
 .card:hover {
-    box-shadow: 0 0 12px #3E8ECC;
-    border-color: #3E8ECC;
+    /* box-shadow: 0 0 12px #3E8ECC; */
+
+    box-shadow: 0 0 12px rgba(224, 224, 224, 0.5);
+    border: 1px solid rgba(224, 224, 224, 0.5);
+    /* border-color: #3E8ECC; */
     cursor: pointer;
-    border: 1px solid #3E8ECC;
+    /* border: 1px solid #3E8ECC; */
+    /* border: 1px solid black; */
 }
 
 .cards_line {
@@ -132,9 +145,9 @@ select, .category, .category_active, .submit_ad, .favorite {
 }
 
 footer {
-    background-color: #414d69;
     color: hsla(0, 0%, 100%, 0.625);
     padding: 20px 170px;
+    /* position: fixed; */
 }
 
 .header_main {
@@ -145,11 +158,11 @@ footer {
 
 .submit_ad {
     background-color: #ef6767;
+    /* background-color: rgb(245, 61, 99); */
 }
 
 .submit_ad:hover {
     box-shadow: 0 0 12px #ef6767;
-    color: white;
 }
 
 .header_right {
@@ -163,7 +176,6 @@ footer {
 }
 
 .favorite:hover {
-    background-color: white;
     box-shadow: 0 0 12px white;
 }
 
