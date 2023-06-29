@@ -78,7 +78,7 @@ a {
 
 
 .category, .submit_ad {
-    color: #D4EDFF;
+    color: rgb(224, 224, 224);
 }
 
 select, .category, .category_active, .submit_ad, .favorite {
@@ -86,7 +86,7 @@ select, .category, .category_active, .submit_ad, .favorite {
 }
 
 .category:hover {
-    background-color: rgb(54, 61, 74);
+    background-color: rgba(54, 61, 74, 0.5);
     color: white;
 }
 
@@ -106,7 +106,8 @@ select, .category, .category_active, .submit_ad, .favorite {
     /* box-shadow: 0 0 12px #3E8ECC; */
 
     /* box-shadow: 0 0 12px rgba(224, 224, 224, 0.5); */
-    border: 1px solid rgba(224, 224, 224, 0.5);
+    /* border: 2px solid rgba(112, 186, 250, 1); */
+    background-color: rgb(76, 82, 94);
     /* border-color: #3E8ECC; */
     cursor: pointer;
     /* border: 1px solid #3E8ECC; */

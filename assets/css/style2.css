@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    background-color:  #21262E;
+    color: rgb(224, 224, 224);
+}
+
+header, footer {
+    background-color: rgb(54, 61, 74);
+}
+
+body, select, option {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    /* background-color: white; */
+}
+
+.category, .category_active, .select {
+    padding: 16px 24px 16px 24px;
+}
+
+.category:hover {
+    background-color: rgb(76, 82, 94);
+}
+
+a {
+    color: rgb(224, 224, 224);
+    text-decoration: none;
+}
