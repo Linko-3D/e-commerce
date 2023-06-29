@@ -5,7 +5,7 @@ body {
 }
 
 header, footer {
-    background-color: rgba(54, 61, 74, 0.5);
+    background-color: rgba(54, 61, 74, 0.75);
 }
 
 body, select, option {
@@ -35,9 +35,28 @@ nav {
     background-color: rgba(76, 82, 94, 0.5);
 }
 
+.category_active {
+    color: white;
+    background-color: rgba(112, 186, 250, 0.5);
+}
+
 a {
     color: rgb(224, 224, 224);
     text-decoration: none;
+}
+
+select {
+    color: rgb(224, 224, 224);
+    background-color: rgba(84, 61, 74, 0.5);
+    border: none;
+}
+
+select option {
+    background-color: rgb(84, 61, 74);
+}
+
+select option:hover {
+    background-color: red;
 }
 
 .tmp_rec {
