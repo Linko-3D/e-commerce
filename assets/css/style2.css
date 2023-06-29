@@ -27,26 +27,33 @@ nav {
     /* background-color: white; */
 }
 
-.category, .category_active, .select {
+.category, .category_active, .select, .submit_ad {
     padding: 16px 24px 16px 24px;
+    color: rgb(255, 255, 255);
 }
 
-.category:hover {
+.category:hover, .submit_ad:hover {
     background-color: rgba(76, 82, 94, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(91, 148, 198, 0.5);
 }
 
 .category_active {
     color: white;
     background-color: rgba(112, 186, 250, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(112, 186, 250, 0.5);
+}
+
+.submit_ad {
+    color: rgb(112, 186, 250);
 }
 
 a {
-    color: rgb(224, 224, 224);
+    color: rgb(112, 186, 250);
     text-decoration: none;
 }
 
 select {
-    color: rgb(224, 224, 224);
+    color: rgb(255, 255, 255);
     background-color: rgba(84, 61, 74, 0.5);
     border: none;
 }
