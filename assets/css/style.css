@@ -2,7 +2,6 @@ body {
     margin: 0px;
     background-color:  #21262E;
     /* background-color: #eff1f5; */
-    color: #4a5365;
     color: rgb(224, 224, 224);
 }
 
@@ -12,10 +11,10 @@ body, select, option {
     font-weight: 700;
 }
 
-select {
-    color: #3E8ECC;
+select, .category_active {
+    color: rgb(54, 61, 74);
     border: none;
-    background-color: #eff1f5;
+    background-color: rgb(224, 224, 224);
 }
 
 select:focus {
@@ -82,17 +81,12 @@ a {
     color: #D4EDFF;
 }
 
-.category_active {
-    color: #3E8ECC;
-    background-color: #eff1f5;
-}
-
 select, .category, .category_active, .submit_ad, .favorite {
     padding: 16px 24px 16px 24px;
 }
 
 .category:hover {
-    background-color: #529AD1;
+    background-color: rgb(54, 61, 74);
     color: white;
 }
 
@@ -106,13 +100,12 @@ select, .category, .category_active, .submit_ad, .favorite {
     background-color: rgb(54, 61, 74);
     color: rgb(224, 224, 224);
     border: 1px solid rgb(29, 34, 41);
-    transition: all ease .3s;
 }
 
 .card:hover {
     /* box-shadow: 0 0 12px #3E8ECC; */
 
-    box-shadow: 0 0 12px rgba(224, 224, 224, 0.5);
+    /* box-shadow: 0 0 12px rgba(224, 224, 224, 0.5); */
     border: 1px solid rgba(224, 224, 224, 0.5);
     /* border-color: #3E8ECC; */
     cursor: pointer;
