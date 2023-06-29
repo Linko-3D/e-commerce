@@ -16,11 +16,14 @@ body, select, option {
 
 header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     width: 100%;
     backdrop-filter: blur(5px);
-}
+  }
+  
+
 
 nav {
     display: flex;
