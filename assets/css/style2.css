@@ -28,7 +28,7 @@ input {
     background-color: rgba(37, 43, 52, 0.9);
 }
 
-input:focus {
+input:focus, select:focus {
     box-shadow: inset 0 0 0 2px rgb(112, 186, 250);
 }
 
@@ -47,15 +47,19 @@ nav {
 
 }
 
-.category:hover, .submit_ad:hover {
+.category:hover, .submit_ad:hover  {
     background-color: rgba(76, 82, 94, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(91, 148, 198, 0.5);
+}
+
+select:hover {
     box-shadow: inset 0 0 0 1px rgba(91, 148, 198, 0.5);
 }
 
 .category_active {
     color: white;
     background-color: rgba(112, 186, 250, 0.5);
-    box-shadow: inset 0 0 0 1px rgba(112, 186, 250, 0.5);
+    box-shadow: inset 0 0 0 2px rgb(112, 186, 250);
 }
 
 .submit_ad {
