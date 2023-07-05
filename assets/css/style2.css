@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
     margin: 0px;
     background-color:  #21262E;
     color: rgb(224, 224, 224);
+    background: radial-gradient(circle at center top, rgb(54, 61, 74), rgb(29, 34, 41));
+    background: radial-gradient(circle at center top, rgb(54, 61, 74), rgb(29, 34, 41));
+
+    background-attachment: fixed;
+    
 }
 
 header, footer {
@@ -41,14 +49,12 @@ nav {
     display: flex;
 }
 
-.category, select,  .submit_ad, input {
+.category, select, .submit_ad, input, form {
     padding: 16px 24px 16px 24px;
     color: rgb(255, 255, 255);
     border: none;
-    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     outline: none;
-
 }
 
 .category:not(.active):hover, .submit_ad:hover  {
@@ -85,7 +91,9 @@ select option:hover {
 }
 
 .tmp_rec {
-    background-color: red;
+    /* background-color: red; */
     height: 2000px;
     width: 50%;;
+    /* background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); */
+
 }
