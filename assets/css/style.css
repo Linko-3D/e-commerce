@@ -103,7 +103,7 @@ select, .category, .category_active, .submit_ad, .favorite {
 }
 
 .card:hover {
-    /* box-shadow: 0 0 12px #3E8ECC; */
+    box-shadow: 0 0 12px #3E8ECC;
 
     /* box-shadow: 0 0 12px rgba(224, 224, 224, 0.5); */
     /* border: 2px solid rgba(112, 186, 250, 1); */
