@@ -20,6 +20,7 @@ body, input {
 
 header, footer, .card {
     background-color: rgb(54, 61, 74);
+    border: 1px solid rgb(29, 34, 41);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -33,11 +34,8 @@ header {
     align-items: center;
     position: fixed;
     width: 100%;
-    backdrop-filter: blur(5px);
     border-bottom:  1px solid rgb(29, 34, 41);
-
 }
-
 
 input::placeholder {
     color: rgb(224, 224, 224);
@@ -53,7 +51,7 @@ nav {
 
 .category, select, .submit_ad, input, form {
     padding: 16px 24px 16px 24px;
-    color: rgb(255, 255, 255);
+    color: rgb(224, 224, 224);
     border: none;
     font-weight: 700;
     outline: none;
@@ -61,13 +59,12 @@ nav {
 
 .category:not(.active):hover  {
     background-color: rgb(76, 82, 94);
-    box-shadow: inset 0 0 0 1px rgba(91, 148, 198, 0.5);
 }
 
 
 .active {
     color: white;
-    background-color: rgba(112, 186, 250, 0.5);
+    background-color: rgb(55, 79, 102);
     box-shadow: inset 0 0 0 2px rgb(112, 186, 250);
 }
 
@@ -81,7 +78,6 @@ a {
 }
 
 select {
-    color: rgb(255, 255, 255);
     background-color: rgba(37, 43, 52, 0.9);
 }
 
@@ -99,8 +95,6 @@ select option {
     display: flex;
     border-radius: 4px;
     padding: 5px;
-
-    border: 1px solid rgb(29, 34, 41);
 }
 
 .card {
@@ -119,7 +113,7 @@ select option {
 
 
 .card:hover {
-
+    background-color: rgb(76, 82, 94);
 }
 
 .content {
@@ -127,7 +121,7 @@ select option {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
+    color: rgb(224, 224, 224);
 }
 
 section {
