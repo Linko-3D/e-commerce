@@ -12,6 +12,7 @@ body {
     margin: 0px;
     color: rgb(224, 224, 224);
     background: radial-gradient(circle at center top, rgb(54, 61, 74), rgb(29, 34, 41));
+    background: linear-gradient(to right, rgb(29, 34, 41), rgb(54, 61, 74), rgb(29, 34, 41));
     background-attachment: fixed;
 }
 
