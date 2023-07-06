@@ -105,11 +105,23 @@ select option:hover {
 }
 
 .card {
-    background-color: white;
     background-color: rgb(54, 61, 74);
 
     width: 200px;
     height: 400px;
+    margin: 30px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.content {
+    padding: 20px;
 }
 
 
