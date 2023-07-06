@@ -17,9 +17,9 @@ body {
     
 }
 
-header, footer {
-    background-color: rgba(255, 255, 255, 0.1);
+header, footer, section {
     background-color: rgb(54, 61, 74);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 
 body, select, option {
@@ -107,9 +107,9 @@ select option {
 
 .card {
     background-color: rgb(54, 61, 74);
+    background-color: rgba(112, 186, 250, 0.5);
     display: flex;
-    width: 300px;
-
+    width: 320px;
     border-radius: 4px;
 
     border: 1px solid rgb(29, 34, 41);
@@ -118,16 +118,19 @@ select option {
 }
 
 
-
 .content {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     padding: 20px;
+    width: 300px;
+
 }
 
-section{
+section {
     height: 1800px;
     width: 60%;
     margin: auto;
     border: 1px solid rgb(29, 34, 41);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
