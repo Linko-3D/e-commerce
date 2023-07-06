@@ -92,9 +92,17 @@ select option:hover {
 }
 
 .tmp_rec {
-    /* background-color: red; */
+    background-color: red;
     height: 2000px;
     width: 50%;;
-    /* background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); */
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
 
+}
+
+.padding {
+    height: 200px;
+}
+
+.card {
+    background-color: white;
 }
