@@ -97,6 +97,7 @@ select option {
 .card {
     display: flex;
     border-radius: 4px;
+    padding: 5px;
 
     border: 1px solid rgb(29, 34, 41);
 
