@@ -33,7 +33,7 @@ header {
     position: fixed;
     width: 100%;
     backdrop-filter: blur(5px);
-    border-bottom:  1px solid rgba(29, 34, 41, 0.5);
+    border-bottom:  1px solid rgb(29, 34, 41);
 }
   
 input {
@@ -118,6 +118,7 @@ select option:hover {
 
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(29, 34, 41);
 }
 
 .content {
