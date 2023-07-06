@@ -13,8 +13,6 @@ body {
     background-color:  #21262E;
     color: rgb(224, 224, 224);
     background: radial-gradient(circle at center top, rgb(54, 61, 74), rgb(29, 34, 41));
-    background: radial-gradient(circle at center top, rgb(54, 61, 74), rgb(29, 34, 41));
-
     background-attachment: fixed;
     
 }
@@ -106,3 +104,6 @@ select option:hover {
 .card {
     background-color: white;
 }
+
+
+/* https://youtu.be/hv0rNxr1XXk */
