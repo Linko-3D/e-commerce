@@ -18,7 +18,8 @@ body {
 }
 
 header, footer {
-    background-color: rgba(54, 61, 74, 0.75);
+    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(54, 61, 74);
 }
 
 body, select, option {
@@ -105,6 +106,10 @@ select option:hover {
 
 .card {
     background-color: white;
+    background-color: rgb(54, 61, 74);
+
+    width: 200px;
+    height: 400px;
 }
 
 
