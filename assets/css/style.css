@@ -78,11 +78,11 @@ a {
 }
 
 select {
-    background-color: rgba(37, 43, 52, 0.9);
+    background-color: rgb(37, 43, 52, 1);
 }
 
 select option {
-    background-color: rgba(54, 61, 74, 0.9);
+    background-color: rgb(54, 61, 74, 1);
 }
 
 .padding {
@@ -98,13 +98,13 @@ select option {
 }
 
 .animate {
-    transform: scale(0);
-    animation: scaleUp 0.1s forwards;
+    transform: scale(0.5);
+    animation: scaleUp 0.2s forwards;
 }
 
 @keyframes scaleUp {
     0% {
-        transform: scale(0);
+        transform: scale(0.5);
     }
     100% {
         transform: scale(1);
