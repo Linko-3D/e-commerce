@@ -3,34 +3,38 @@ let categories = document.querySelectorAll(".category");
 
 // iterate over all the categories
 categories.forEach(category => {
-
   // attach a click event listener to each category
-  category.addEventListener("click", function(event) {
-
+  category.addEventListener("click", event => {
     // prevent the default action of the link
     event.preventDefault();
 
     // remove active class from all categories
-    categories.forEach(innerCategory => {
-      innerCategory.classList.remove("active");
-    });
+    categories.forEach(innerCategory => innerCategory.classList.remove("active"));
 
     // add the active class to the clicked category
-    this.classList.add("active");
+    category.classList.add("active");
 
-    // trigger the card animation
-    document.querySelectorAll('.card').forEach(card => {
-      card.classList.remove('animate');
-      void card.offsetWidth; // Reflow the element to reset the animation
-      card.classList.add('animate');
-    });
-
+    // add the animate class to all cards
+    animateCards();
   });
 });
 
+// get the select menu
+let selectMenu = document.querySelector("select[name='departments']");
+
+// attach a change event listener to the select menu
+selectMenu.addEventListener("change", animateCards);
+
 // Animation when page loads
-window.onload = function() {
+window.onload = animateCards;
+
+// Function to animate all cards
+function animateCards() {
+  // remove the animate class from all cards and then add it again
   document.querySelectorAll('.card').forEach(card => {
-      card.classList.add('animate');
+    card.classList.remove('animate');
+    // Reflow the element to reset the animation
+    void card.offsetWidth;
+    card.classList.add('animate');
   });
 }
