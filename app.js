@@ -7,14 +7,21 @@ categories.forEach(category => {
   category.addEventListener("click", event => {
     // prevent the default action of the link
     event.preventDefault();
-
-    // if the category has the active class, remove it
-    // otherwise, remove the active class from all categories and add it to the clicked category
-    if (category.classList.contains("active")) {
-      category.classList.remove("active");
+    
+    // if the shift key is pressed
+    if (event.shiftKey) {
+      category.classList.toggle("active");
     } else {
-      categories.forEach(innerCategory => innerCategory.classList.remove("active"));
-      category.classList.add("active");
+      // if the shift key is not pressed
+      if (category.classList.contains("active")) {
+        // if the category is already active, remove the class
+        category.classList.remove("active");
+        categories.forEach(innerCategory => innerCategory.classList.remove("active"));
+      } else {
+        // if the category is not active, add the class and remove from others
+        categories.forEach(innerCategory => innerCategory.classList.remove("active"));
+        category.classList.add("active");
+      }
     }
 
     // add the animate class to all cards
