@@ -8,11 +8,14 @@ categories.forEach(category => {
     // prevent the default action of the link
     event.preventDefault();
 
-    // remove active class from all categories
-    categories.forEach(innerCategory => innerCategory.classList.remove("active"));
-
-    // add the active class to the clicked category
-    category.classList.add("active");
+    // if the category has the active class, remove it
+    // otherwise, remove the active class from all categories and add it to the clicked category
+    if (category.classList.contains("active")) {
+      category.classList.remove("active");
+    } else {
+      categories.forEach(innerCategory => innerCategory.classList.remove("active"));
+      category.classList.add("active");
+    }
 
     // add the animate class to all cards
     animateCards();
@@ -33,7 +36,6 @@ function animateCards() {
   // remove the animate class from all cards and then add it again
   document.querySelectorAll('.card').forEach(card => {
     card.classList.remove('animate');
-    // Reflow the element to reset the animation
     void card.offsetWidth;
     card.classList.add('animate');
   });
