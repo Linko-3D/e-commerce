@@ -61,7 +61,6 @@ nav {
     background-color: rgb(76, 82, 94);
 }
 
-
 .active {
     color: white;
     background-color: rgb(55, 79, 102);
@@ -97,9 +96,9 @@ select option {
     padding: 5px;
 }
 
-.card {
+.animate {
     transform: scale(0);
-    animation: scaleUp 0.25s forwards;
+    animation: scaleUp 0.1s forwards;
 }
 
 @keyframes scaleUp {
@@ -110,7 +109,6 @@ select option {
         transform: scale(1);
     }
 }
-
 
 .card:hover {
     background-color: rgb(76, 82, 94);
@@ -131,14 +129,10 @@ section {
     width: 60%;
     gap: 20px;
     margin: auto;
-    /* border: 1px solid rgb(29, 34, 41);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-    background-color: rgb(37, 43, 52); */
 }
 
 .container {
     margin: 20px;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
