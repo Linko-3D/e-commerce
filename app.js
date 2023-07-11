@@ -7,7 +7,15 @@ categories.forEach(category => {
   category.addEventListener("click", event => {
     // prevent the default action of the link
     event.preventDefault();
-    
+
+    // Add the animating class
+    category.classList.add("animating");
+
+    // After the animation finishes, remove the animating class
+    setTimeout(function() {
+        category.classList.remove("animating");
+    }, 1000); // Corresponds to the duration of the animation
+
     // if the shift key is pressed
     if (event.shiftKey) {
       category.classList.toggle("active");
