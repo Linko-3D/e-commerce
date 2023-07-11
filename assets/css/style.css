@@ -18,8 +18,10 @@ body, input {
     background-color:  rgb(29, 34, 41);
 }
 
-header, footer, .card, select option {
+header, footer, .card {
     background-color: rgb(55, 79, 102);
+    border: 1px solid rgb(114, 119, 128);
+
 }
 
 body {
@@ -111,9 +113,6 @@ select {
     display: flex;
     border-radius: 4px;
     padding: 5px;
-    /* border: 1px solid rgb(114, 119, 128); */
-    /* box-shadow: inset 0 0 0 1px rgb(114, 119, 128); */
-
 }
 
 .animate {
