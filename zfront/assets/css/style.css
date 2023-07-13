@@ -133,8 +133,6 @@ select {
 
 .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     color: rgb(224, 224, 224);
 }
@@ -142,7 +140,6 @@ select {
 section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     width: 60%;
     gap: 20px;
     margin: auto;
