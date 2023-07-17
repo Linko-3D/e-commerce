@@ -4,14 +4,15 @@
 
 {% for ad in advertisements %}
 
-<p>
-{{ ad.title }}
-{{ ad.content }}
-{{ ad.image }}
-{{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
-</p>
 
 
+<a href="#" class="card">
+    <div class="content">
+        {{ ad.title }} {{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
+        <img src="{{ ad.image }}" alt="Photo annonce">
+        <div>{{ ad.content }}</div>
+    </div>
+</a>
 
 {% endfor %}
 
