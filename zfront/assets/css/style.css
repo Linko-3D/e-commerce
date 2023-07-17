@@ -133,8 +133,6 @@ select {
 
 .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     color: rgb(224, 224, 224);
 }
@@ -142,7 +140,6 @@ select {
 section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     width: 60%;
     gap: 20px;
     margin: auto;
@@ -158,4 +155,12 @@ section {
 
 .icon {
     font-size: 2rem;
+}
+
+.card2 {
+    width: 320px;
+    height: 450px;
+    background-color: white;
+    border-radius:  20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
