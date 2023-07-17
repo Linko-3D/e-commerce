@@ -29,6 +29,7 @@ header {
     justify-content: center;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 0px 1px black;
 }
 
 footer {
@@ -53,6 +54,7 @@ nav {
 
 .category:hover {
     background-color: rgb(76, 82, 94);
+    background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
 }
 
 .submit_ad {
