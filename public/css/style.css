@@ -34,3 +34,36 @@ header {
     width: 100%;
     z-index: 1000;
 }
+
+
+
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+label {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+label:before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #999;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+}
+
+input[type="radio"]:checked + label:before {
+  background-color: #999;
+}
