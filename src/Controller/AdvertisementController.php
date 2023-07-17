@@ -13,7 +13,7 @@ class AdvertisementController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(AdvertisementRepository $advertisementRepository): Response
     {
-        $advertisements = $advertisementRepository->findAll();
+        $advertisements = $advertisementRepository->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
             'advertisements' => $advertisements,
