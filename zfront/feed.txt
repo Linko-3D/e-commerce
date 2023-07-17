@@ -1,0 +1,18 @@
+php bin/console doctrine:migrations:migrate
+
+
+
+
+
+
+
+
+
+
+INSERT INTO advertisement (title, content, image, created_at) 
+VALUES 
+('title1', 'content1', 'image1', CURRENT_TIMESTAMP),
+('title2', 'content2', 'image2', CURRENT_TIMESTAMP),
+('title3', 'content3', 'image3', CURRENT_TIMESTAMP),
+('title4', 'content4', 'image4', CURRENT_TIMESTAMP),
+('title5', 'content5', 'image5', CURRENT_TIMESTAMP);
