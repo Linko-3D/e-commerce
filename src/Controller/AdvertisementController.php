@@ -6,21 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Advertisement;
+use App\Repository\AdvertisementRepository;
 
 class AdvertisementController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(): Response
+    public function index(AdvertisementRepository $advertisementRepository): Response
     {
-
-        // $repo = $this->getDoctrine()->getRepository(Advertisement::class);
-        // $article = $repo->findAll();
-
-        $nom = "danyl";
+        $advertisements = $advertisementRepository->findAll();
 
         return $this->render('home/index.html.twig', [
-            "nom" => $nom
+            'advertisements' => $advertisements,
         ]);
-
     }
 }

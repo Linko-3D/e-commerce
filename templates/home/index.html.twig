@@ -1,14 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ nom }}
-aaaaAAAAA
+
+{% for ad in advertisements %}
+
+<p>
+{{ ad.title }}
+{{ ad.content }}
+{{ ad.image }}
+{{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
+</p>
 
 
-{# {{ for article in articles }}
-{{ article.title }}
 
-{{ endfor }} #}
-
+{% endfor %}
 
 {% endblock %}
