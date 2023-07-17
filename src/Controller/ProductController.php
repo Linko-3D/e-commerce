@@ -11,8 +11,11 @@ class ProductController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
+        $nom = "danyl";
 
-        return $this->render('home/index.html.twig');
+        return $this->render('home/index.html.twig', [
+            "nom" => $nom
+        ]);
 
     //     return $this->json([
     //         'message' => 'Welcome to your new controller!',

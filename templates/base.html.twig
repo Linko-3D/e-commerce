@@ -7,7 +7,7 @@
         
         {% block stylesheets %}
         
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styley.css') }}">
         {% endblock %}
         {% block javascripts %}
         {% endblock %}
@@ -30,18 +30,17 @@
             <a class="category" href="#">Loisirs</a>
             <a class="category" href="#">Autres</a>
 
-            <a class="category submit_ad" href="#">Poster une annonce</a>
+            <a class="category submit_ad" href="#">Publier une annonce</a>
             </nav>
         </header>
 
         <div class="padding"></div>
 
-
-        <section>
+        <div class="container">
 
         {% block body %}{% endblock %}
 
-        </section>
+        </div>
 
         <footer>Chat</footer>
     </body>
