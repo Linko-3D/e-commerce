@@ -58,9 +58,14 @@ nav {
 select:hover {
     background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
     cursor: pointer;
+    color: white;
 }
 
 .submit_ad {
+    color: rgb(142, 239, 151);
+}
+
+.submit_ad:hover {
     color: rgb(142, 239, 151);
 }
 
