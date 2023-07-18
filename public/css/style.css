@@ -108,11 +108,6 @@ select {
     color: rgb(224, 224, 224);
 }
 
-.img_ad {
-    width: 300;
-    height: 225;
-}
-
 .photos {
     display: flex;
     flex-direction: column;
