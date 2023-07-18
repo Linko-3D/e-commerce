@@ -21,7 +21,6 @@ header, footer, .card {
     background-color: rgb(54, 61, 74);
     background-image: linear-gradient(to bottom, rgb(54, 61, 74), rgb(37, 43, 52));
     box-shadow: 0px 0px 5px black;
-
 }
 
 header {
@@ -95,15 +94,6 @@ select {
     gap: 20px;
 }
 
-
-
-
-
-
-
-
-
-
 .card {
     display: flex;
     border-radius: 4px;
@@ -116,9 +106,11 @@ select {
     color: rgb(224, 224, 224);
 }
 
-
-
-
+.photos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .icon {
     font-size: 2rem;

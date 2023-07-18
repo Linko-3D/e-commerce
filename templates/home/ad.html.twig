@@ -2,11 +2,25 @@
 
 {% block body %}
 
+<div class="card">
 
+<div class="photos">
 
-
-{{ ad.title }} {{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
 <img src="{{ ad.image }}" alt="Photo annonce">
+<img src="{{ ad.image }}" alt="Photo annonce">
+<img src="{{ ad.image }}" alt="Photo annonce">
+
+</div>
+
+<div class="content">
+<h2>
+{{ ad.title }}
+</h2>
+
+publié le {{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
 <div>{{ ad.content }}</div>
+</div>
+
+</div>
 
 {% endblock %}
