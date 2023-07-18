@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}e-commerce{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        
-        {% block stylesheets %}
-        
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        {% endblock %}
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        <header>
-            <nav>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}e-commerce
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
-            <a class="category" href="{{ path('home') }}">Accueil</a>
+		{% block stylesheets %}
 
-            <select name="departments">
-                <option value="01">01 - Ain</option>
-                <option value="02">02 - Aisne</option>
-            </select>
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			<nav>
+
+				<a class="category" href="{{ path('home') }}">Accueil</a>
+
+				<select name="departments">
+					<option value="01">01 - Ain</option>
+					<option value="02">02 - Aisne</option>
+				</select>
 
 
-            <a class="category" href="#">Immobilier</a>
-            <a class="category" href="#">Véhicules</a>
-            <a class="category" href="#">Vacances</a>
-            <a class="category" href="#">Mode</a>
-            <a class="category" href="#">Maison</a>
-            <a class="category" href="#">Multimédia</a>
-            <a class="category" href="#">Loisirs</a>
-            <a class="category" href="#">Autres</a>
+				<a class="category" href="#">Immobilier</a>
+				<a class="category" href="#">Véhicules</a>
+				<a class="category" href="#">Vacances</a>
+				<a class="category" href="#">Mode</a>
+				<a class="category" href="#">Maison</a>
+				<a class="category" href="#">Multimédia</a>
+				<a class="category" href="#">Loisirs</a>
+				<a class="category" href="#">Autres</a>
 
-            <a class="category submit_ad" href="#">Publier une annonce</a>
-            </nav>
-        </header>
+				<a class="category submit_ad" href="#">Publier une annonce</a>
+			</nav>
+		</header>
 
-        <div class="padding"></div>
+		<div class="padding"></div>
 
-        <div class="container">
+		<div class="container"> {% block body %}{% endblock %}
 
-        {% block body %}{% endblock %}
+			</div>
 
-        </div>
-
-        <footer>Chat</footer>
-    </body>
-</html>
+			<footer>Chat</footer>
+		</body>
+	</html>

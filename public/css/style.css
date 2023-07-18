@@ -13,14 +13,17 @@ body {
     font-weight: 700;
 }
 
-body, input {
-    background-color:  rgb(29, 34, 41);
+body,
+input {
+    background-color: rgb(29, 34, 41);
 }
 
-header, footer, .card {
+header,
+footer,
+.card {
     background-color: rgb(54, 61, 74);
     background-image: linear-gradient(to bottom, rgb(54, 61, 74), rgb(37, 43, 52));
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -51,7 +54,8 @@ nav {
     outline: none;
 }
 
-.category:hover, select:hover {
+.category:hover,
+select:hover {
     background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
     cursor: pointer;
 }
@@ -120,6 +124,6 @@ select {
     width: 320px;
     height: 450px;
     background-color: white;
-    border-radius:  20px;
+    border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
