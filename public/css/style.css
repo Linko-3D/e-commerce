@@ -65,10 +65,6 @@ select:hover {
     color: rgb(142, 239, 151);
 }
 
-.submit_ad:hover {
-    color: rgb(142, 239, 151);
-}
-
 a {
     color: rgb(112, 186, 250);
     text-decoration: none;
