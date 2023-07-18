@@ -15,18 +15,24 @@ class AdvertisementController extends AbstractController
     {
         $advertisements = $repo->findBy([], ['id' => 'DESC']);
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('pages/index.html.twig', [
             'ads' => $advertisements
         ]);
     }
 
-    #[Route('/ad/{id}', name: 'ad')]
+    #[Route('/ad/{id}', name: 'ad_show')]
     public function show($id, AdvertisementRepository $repo): Response
     {
         $advertisements = $repo->find($id);
 
-        return $this->render('home/ad.html.twig', [
+        return $this->render('pages/ad.html.twig', [
             'ad' => $advertisements
         ]);
+    }
+
+    #[Route('/ad/new', name: 'ad_create')]
+    public function create()
+    {
+        return $this->render('pages/create.html.twig');
     }
 }
