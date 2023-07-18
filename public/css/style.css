@@ -20,7 +20,8 @@ input {
 
 header,
 footer,
-.card {
+.card,
+.content {
     background-color: rgb(54, 61, 74);
     background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -85,7 +86,7 @@ select {
 
 
 .padding {
-    height: 180px;
+    height: 200px;
     height: 80px;
 }
 
@@ -105,8 +106,6 @@ select {
     padding: 5px;
     flex-direction: column;
     color: rgb(224, 224, 224);
-
-
 }
 
 .img_ad {
@@ -124,10 +123,26 @@ select {
     font-size: 2rem;
 }
 
-.card2 {
-    width: 320px;
-    height: 450px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.infos {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 300px;
 }

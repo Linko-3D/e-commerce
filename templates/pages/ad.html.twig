@@ -2,34 +2,35 @@
 
 {% block body %}
 
-	<div
-		class="card">
+	<div class="content">
 
-		{# <div class="photos">
-						
-									<img src="{{ ad.image }}" alt="Photo annonce">
-									<img src="{{ ad.image }}" alt="Photo annonce">
-									<img src="{{ ad.image }}" alt="Photo annonce">
-						
-								</div> #}
+		<div class="line">
 
-		<div class="content">
+			<div>{{ ad.title }}</div>
 
-			<a href=" {{ path('home') }} ">
-				<ion-icon class="icon" name="arrow-back-sharp"></ion-icon>
-			</a>
-			<h2>
-				{{ ad.title }}
-			</h2>
-
-			publié le
-			{{ ad.createdAt | date('d/m/Y') }}
-			à
-			{{ ad.createdAt | date('H:i') }}
-			<div>{{ ad.content }}</div>
+			<div class="line">
+				<ion-icon class="icon" name="mail-sharp"></ion-icon>
+				Contacter
+			</div>
 
 		</div>
 
-	</div>
+		<div class="line">
+			<div>
+				City
+			</div>
 
-{% endblock %}
+			<div class="line">
+				<ion-icon class="icon" name="call-sharp"></ion-icon>
+				06 06 06 06 06
+			</div>
+		</div>
+
+		<div class="photos">
+			<img src="{{ ad.image }}" alt="">
+			<img src="{{ ad.image }}" alt="">
+			<img src="{{ ad.image }}" alt="">
+		</div>
+
+	</div>
+</div>{% endblock %}

@@ -4,16 +4,13 @@
 
 	{% for ad in ads %}
 
-		<a
-			href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
-			{# <div class="content"> #}
+		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
 			{{ ad.title }}
 			{{ ad.createdAt | date('d/m/Y') }}
 			à
 			{{ ad.createdAt | date('H:i') }}
 			<img class="img_ad" src="{{ ad.image }}" alt="Photo annonce">
 			<div>{{ ad.content }}</div>
-			{# </div> #}
 		</a>
 
 	{% endfor %}
