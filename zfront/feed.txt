@@ -20,3 +20,20 @@ VALUES
 ('title3', 'content3', 'https://placehold.co/300x225', CURRENT_TIMESTAMP),
 ('title4', 'content4', 'https://placehold.co/300x225', CURRENT_TIMESTAMP),
 ('title5', 'content5', 'https://placehold.co/300x225', CURRENT_TIMESTAMP);
+
+
+
+
+
+
+
+
+
+
+
+PHP Intelephense
+PHP Namespace Resolver
+Twig Language 2
+
+Ctrl + , puis taper suggest basic et décocher.
+cocher format
