@@ -5,8 +5,7 @@
 {% for ad in advertisements %}
 
 
-
-<a href="{{ path('ad') }}" class="card">
+<a href="{{ path('ad' , {'id':ad.id}) }}" class="card">
     <div class="content">
         {{ ad.title }} {{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
         <img src="{{ ad.image }}" alt="Photo annonce">

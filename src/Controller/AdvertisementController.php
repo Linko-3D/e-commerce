@@ -11,20 +11,21 @@ use App\Repository\AdvertisementRepository;
 class AdvertisementController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function home(AdvertisementRepository $advertisementRepository): Response
+    public function home(AdvertisementRepository $repo): Response
     {
-        $advertisements = $advertisementRepository->findBy([], ['id' => 'DESC']);
+        $advertisements = $repo->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
-            'advertisements' => $advertisements,
+            'advertisements' => $advertisements
         ]);
     }
 
-    #[Route('/ad', name: 'ad')]
-    public function show(): Response
+    #[Route('/ad/{id}', name: 'ad')]
+    public function show($id, AdvertisementRepository $repo): Response
     {
-
+        $advertisements = $repo->find($id);
         return $this->render('home/ad.html.twig', [
+            'advertisements' => $advertisements
         ]);
     }
 }
