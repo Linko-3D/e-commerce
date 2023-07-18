@@ -20,6 +20,12 @@ class AdvertisementController extends AbstractController
         ]);
     }
 
+    #[Route('/ad/new', name: 'ad_create')]
+    public function create()
+    {
+        return $this->render('pages/create.html.twig');
+    }
+
     #[Route('/ad/{id}', name: 'ad_show')]
     public function show($id, AdvertisementRepository $repo): Response
     {
@@ -28,11 +34,5 @@ class AdvertisementController extends AbstractController
         return $this->render('pages/ad.html.twig', [
             'ad' => $advertisements
         ]);
-    }
-
-    #[Route('/ad/new', name: 'ad_create')]
-    public function create()
-    {
-        return $this->render('pages/create.html.twig');
     }
 }
