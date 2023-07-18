@@ -2,6 +2,11 @@
 
 {% block body %}
 
-DETAILS
+
+
+
+{{ ad.title }} {{ ad.createdAt | date('d/m/Y') }} à {{ ad.createdAt | date('H:i') }}
+<img src="{{ ad.image }}" alt="Photo annonce">
+<div>{{ ad.content }}</div>
 
 {% endblock %}

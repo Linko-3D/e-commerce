@@ -16,7 +16,7 @@ class AdvertisementController extends AbstractController
         $advertisements = $repo->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
-            'advertisements' => $advertisements
+            'ads' => $advertisements
         ]);
     }
 
@@ -24,8 +24,9 @@ class AdvertisementController extends AbstractController
     public function show($id, AdvertisementRepository $repo): Response
     {
         $advertisements = $repo->find($id);
+
         return $this->render('home/ad.html.twig', [
-            'advertisements' => $advertisements
+            'ad' => $advertisements
         ]);
     }
 }
