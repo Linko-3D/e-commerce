@@ -11,6 +11,7 @@
 body {
     color: rgb(224, 224, 224);
     font-weight: 700;
+    text-align: justify;
 }
 
 body,
@@ -21,7 +22,8 @@ input {
 header,
 footer,
 .card,
-.content {
+.content,
+.top_card {
     background-color: rgb(54, 61, 74);
     background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -122,10 +124,19 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+}
+
+.line2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .content {
     width: 100%;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .column {
@@ -140,4 +151,10 @@ select {
 
 img {
     width: 300px;
+}
+
+.top_card {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 5px;
 }
