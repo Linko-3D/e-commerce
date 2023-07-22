@@ -6,4 +6,15 @@
 		<ion-icon class="icon" name="arrow-back-sharp"></ion-icon>
 	</a>
 
+
+	{{ form_start(adForm) }}
+	{{ form_row(adForm.title) }}
+	{{ form_row(adForm.content) }}
+	{{ form_row(adForm.image) }}
+	{{ form_row(adForm.price) }}
+	<button type="submit">Publier</button>
+	{{ form_end(adForm) }}
+
+
+
 {% endblock %}

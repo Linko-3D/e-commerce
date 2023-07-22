@@ -3,10 +3,14 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Advertisement;
 use App\Repository\AdvertisementRepository;
+use App\Form\AdvertisementFormType;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdvertisementController extends AbstractController
 {
@@ -21,18 +25,40 @@ class AdvertisementController extends AbstractController
     }
 
     #[Route('/ad/new', name: 'ad_create')]
-    public function create()
+    public function create(Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
     {
-        return $this->render('pages/create.html.twig');
+        $ad = new Advertisement();
+
+        $adForm = $this->createForm(AdvertisementFormType::class, $ad);
+
+        $adForm->handleRequest($request);
+
+    if ($adForm->isSubmitted() && $adForm->isValid()) {
+        // $slug = $slugger->slug($ad->getTitle());
+        // $ad->setSlug($slug);
+
+        $em->persist($ad);
+        $em->flush();
+
+        return $this->redirectToRoute('home');
+
+    }
+
+
+
+
+        return $this->render('pages/create.html.twig', [
+            'adForm' => $adForm->createView()
+        ]);
     }
 
     #[Route('/ad/{id}', name: 'ad_show')]
     public function show($id, AdvertisementRepository $repo): Response
     {
-        $advertisements = $repo->find($id);
+        $advertisement = $repo->find($id);
 
         return $this->render('pages/ad.html.twig', [
-            'ad' => $advertisements
+            'ad' => $advertisement
         ]);
     }
 }

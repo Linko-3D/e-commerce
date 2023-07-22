@@ -6,6 +6,7 @@
 
 		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
 			{{ ad.title }}
+			>{{ ad.price }}€
 			{{ ad.createdAt | date('d/m/Y') }}
 			à
 			{{ ad.createdAt | date('H:i') }}
