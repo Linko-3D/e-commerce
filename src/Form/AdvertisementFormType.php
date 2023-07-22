@@ -24,10 +24,13 @@ class AdvertisementFormType extends AbstractType
                 'label' => 'Prix'
             ])
             ->add('created_at')
-        ;
+            ->add('city', null, [
+                'label' => 'Ville'
+            ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+                
+                public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Advertisement::class,

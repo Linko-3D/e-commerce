@@ -6,6 +6,7 @@
 <div class="top_card">
 
 	<div class="line">
+		{{ ad.title }}
 		
 		<div class="line">
 			<ion-icon class="icon" name="mail-sharp"></ion-icon>
@@ -16,7 +17,7 @@
 	
 	<div class="line">
 		<div>
-			City
+			{{ ad.city }}
 		</div>
 		
 		<div class="line">
@@ -30,10 +31,7 @@
 
 <div class="content">
 		<div class="line2">
-			<div class="photos">
-				<img src="{{ ad.image }}" alt="">
-				<img src="{{ ad.image }}" alt="">
-				<img src="{{ ad.image }}" alt="">
+				<img class="photo" src="{{ ad.image }}" alt="">
 			</div>
 
 				<div>{{ ad.content }}</div>

@@ -3,11 +3,11 @@
 {% block body %}
 
 	{% for ad in ads %}
-
 		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
 			{{ ad.title }}
 			>{{ ad.price }}€
-			<img src="{{ ad.image }}" alt="Photo annonce">
+			<img class="photo" src="{{ ad.image }}" alt="Photo annonce">
+			{{ ad.city }}
 		</a>
 
 	{% endfor %}
