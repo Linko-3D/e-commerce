@@ -33,19 +33,18 @@ class AdvertisementController extends AbstractController
 
         $adForm->handleRequest($request);
 
-    if ($adForm->isSubmitted() && $adForm->isValid()) {
-        // $slug = $slugger->slug($ad->getTitle());
-        // $ad->setSlug($slug);
+        if ($adForm->isSubmitted() && $adForm->isValid()) {
+            // $slug = $slugger->slug($ad->getTitle());
+            // $ad->setSlug($slug);
 
-        $em->persist($ad);
-        $em->flush();
+            $em->persist($ad);
+            $em->flush();
 
-        return $this->redirectToRoute('home');
+            $this->addFlash('success', 'Annonce publiée');
 
-    }
-
-
-
+            // Redirect to the route of the newly created advertisement with its ID
+            return $this->redirectToRoute('ad_show', ['id' => $ad->getId()]);
+        }
 
         return $this->render('pages/create.html.twig', [
             'adForm' => $adForm->createView()
