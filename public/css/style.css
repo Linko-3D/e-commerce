@@ -64,8 +64,16 @@ select:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.home {
+    color: rgb(141, 165, 243)
+}
+
 .submit_ad {
     color: rgb(142, 239, 151);
+}
+
+.my_ads {
+    color: rgb(252, 127, 127);
 }
 
 a {
