@@ -2,11 +2,11 @@
 
 {% block body %}
 
-	<a href=" {{ path('home') }} ">
-		<ion-icon class="icon" name="arrow-back-sharp"></ion-icon>
-	</a>
+<div class="content">
+Publier une annonce :
+</div>
 
-
+<div class="content">
 	{{ form_start(adForm) }}
 	{{ form_row(adForm.title) }}
 	{{ form_row(adForm.content) }}
@@ -15,7 +15,6 @@
 	{{ form_row(adForm.price) }}
 	<button type="submit">Publier</button>
 	{{ form_end(adForm) }}
-
-
+<div>
 
 {% endblock %}

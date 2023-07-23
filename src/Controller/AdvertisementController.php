@@ -60,4 +60,14 @@ class AdvertisementController extends AbstractController
             'ad' => $advertisement
         ]);
     }
+
+
+   #[Route('/dashboard', name: 'dashboard')]
+    public function dashboard(): Response
+    {
+
+        return $this->render('pages/dashboard.html.twig');
+    }
+
+
 }
