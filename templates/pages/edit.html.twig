@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<h1>Modifier l'annonce</h1>
+
+	{# Render the form for editing the advertisement #}
+	{{ form_start(adForm) }}
+	{{ form_row(adForm.title, {'label': 'Titre'}) }}
+	{{ form_row(adForm.content, {'label': 'Description'}) }}
+	{{ form_row(adForm.image) }}
+	{{ form_row(adForm.price, {'label': 'Prix'}) }}
+	{{ form_row(adForm.city, {'label': 'Ville'}) }}
+	<button type="submit">Mettre à jour</button>
+	{{ form_end(adForm) }}
+
+	{# Link to delete the advertisement, similar to the ad.html.twig template #}
+	<div class="content">
+		<a class="red" href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
+	</div>
+
+{% endblock %}

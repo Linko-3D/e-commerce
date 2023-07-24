@@ -3,7 +3,11 @@
 {% block body %}
 
 	<div class="content">
-		<a href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
+		<a href="{{ path('ad_edit', {'id': ad.id}) }}">Modifier</a>
+	</div>
+
+	<div class="content">
+		<a class="red" href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
 	</div>
 
 	<div class="content">

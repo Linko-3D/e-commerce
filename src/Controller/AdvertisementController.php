@@ -9,6 +9,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Advertisement;
 use App\Repository\AdvertisementRepository;
 use App\Form\AdvertisementFormType;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
@@ -36,6 +38,8 @@ class AdvertisementController extends AbstractController
         if ($adForm->isSubmitted() && $adForm->isValid()) {
             // $slug = $slugger->slug($ad->getTitle());
             // $ad->setSlug($slug);
+
+            $ad->setCreatedAt(new DateTimeImmutable('now'));
 
             $em->persist($ad);
             $em->flush();
@@ -79,5 +83,26 @@ class AdvertisementController extends AbstractController
     public function dashboard(): Response
     {
         return $this->render('pages/dashboard.html.twig');
+    }
+
+    #[Route('/ad/{id}/edit', name: 'ad_edit')]
+    public function edit(Request $request, Advertisement $advertisement, EntityManagerInterface $em): Response
+    {
+        $adForm = $this->createForm(AdvertisementFormType::class, $advertisement);
+
+        $adForm->handleRequest($request);
+
+        if ($adForm->isSubmitted() && $adForm->isValid()) {
+            $em->flush();
+
+            $this->addFlash('success', 'Annonce mise à jour');
+
+            return $this->redirectToRoute('ad_show', ['id' => $advertisement->getId()]);
+        }
+
+        return $this->render('pages/edit.html.twig', [
+            'adForm' => $adForm->createView(),
+            'ad' => $advertisement,
+        ]);
     }
 }

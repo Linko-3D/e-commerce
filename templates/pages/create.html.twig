@@ -12,7 +12,11 @@
 		{{ form_row(adForm.city) }}
 		{{ form_row(adForm.image) }}
 		{{ form_row(adForm.price) }}
-		<button type="submit">Publier</button>
-		{{ form_end(adForm) }}
 	</div>
+
+	<div class="content">
+		<button class="green" type="submit">Publier</button>
+	</div>
+	{{ form_end(adForm) }}
+
 {% endblock %}
