@@ -61,13 +61,23 @@ class AdvertisementController extends AbstractController
         ]);
     }
 
-
-   #[Route('/dashboard', name: 'dashboard')]
-    public function dashboard(): Response
+    #[Route('/ad/{id}/delete', name: 'ad_delete')]
+    public function delete(Advertisement $advertisement, EntityManagerInterface $em): Response
     {
+        // Delete the advertisement
+        $em->remove($advertisement);
+        $em->flush();
 
-        return $this->render('pages/dashboard.html.twig');
+        // Set a flash message for success
+        $this->addFlash('success', 'Annonce supprimée');
+
+        // Redirect to the home page after successful deletion
+        return $this->redirectToRoute('home');
     }
 
-
+    #[Route('/dashboard', name: 'dashboard')]
+    public function dashboard(): Response
+    {
+        return $this->render('pages/dashboard.html.twig');
+    }
 }

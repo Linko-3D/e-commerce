@@ -2,9 +2,7 @@
 
 {% block body %}
 
-
 	<div class="content">
-
 		<div class="line">
 			<div>{{ ad.title }}</div>
 
@@ -12,7 +10,6 @@
 				<ion-icon class="icon" name="mail-sharp"></ion-icon>
 				Contacter
 			</div>
-
 		</div>
 
 		<div class="line">
@@ -25,8 +22,6 @@
 				06 06 06 06 06
 			</div>
 		</div>
-
-
 	</div>
 
 	<div class="content">
@@ -36,4 +31,9 @@
 
 		<div>{{ ad.content }}</div>
 	</div>
-</div></div>{% endblock %}
+
+	<div class="content">
+		<a href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Are you sure you want to delete this advertisement?')">Delete</a>
+	</div>
+
+{% endblock %}
