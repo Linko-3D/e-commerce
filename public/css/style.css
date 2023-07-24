@@ -193,3 +193,8 @@ textarea:focus {
     outline: none;
     /* Remove default focus outline (optional, but it's recommended to improve accessibility) */
 }
+
+
+.contrast {
+    background-color: rgb(21, 24, 30);
+}

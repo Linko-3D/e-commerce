@@ -1,12 +1,14 @@
+Todo slug
+
+
+
+
+
+
 symfony console d:d:c
 
 
-
 php bin/console doctrine:migrations:migrate
-
-
-
-
 
 
 
