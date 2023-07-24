@@ -70,7 +70,7 @@ button:hover {
 }
 
 .blue {
-    color: rgb(141, 165, 243)
+    color: rgb(141, 165, 243);
 }
 
 .green {
@@ -95,33 +95,32 @@ select {
     font-weight: 700;
 }
 
-
-
-
 .padding {
     height: 200px;
     height: 80px;
 }
 
-
-
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 24.22%;
     gap: 20px;
+    max-width: 1200px;
+    /* Set a maximum width for the container */
+    margin: 0 auto;
+    /* Horizontally center the container */
 }
 
 .card {
     display: flex;
+    flex-direction: column;
     align-items: center;
     border-radius: 4px;
     padding: 5px;
-    flex-direction: column;
     color: rgb(224, 224, 224);
     gap: 5px;
+    flex: 1;
+    /* Allow the cards to grow and take full width of the container */
 }
-
 
 .icon {
     font-size: 1.5rem;
@@ -188,7 +187,20 @@ form {
 input:focus,
 textarea:focus {
     border: 2px solid rgb(112, 186, 250);
-    /* Replace #007bff with your desired border color */
     outline: none;
-    /* Remove default focus outline (optional, but it's recommended to improve accessibility) */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        justify-content: center;
+        /* Center the cards */
+        margin: 0;
+        /* Remove margin */
+    }
+
+    .card {
+        flex-basis: 90%;
+        /* Set the width of each card on smaller screens */
+    }
 }
