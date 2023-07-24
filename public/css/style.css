@@ -162,3 +162,23 @@ img {}
     height: 300px;
     object-fit: cover;
 }
+
+textarea,
+input {
+    resize: none;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    padding: 16px 24px 16px 24px;
+}
+
+textarea {
+    height: 200px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
