@@ -130,6 +130,7 @@ select {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    width: 100%;
 }
 
 .line2 {
@@ -154,11 +155,10 @@ select {
     align-items: center;
 }
 
-img {
-}
+img {}
 
 .photo {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     object-fit: cover;
 }

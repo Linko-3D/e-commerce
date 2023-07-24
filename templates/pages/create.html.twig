@@ -2,19 +2,19 @@
 
 {% block body %}
 
-<div class="content">
-Publier une annonce :
-</div>
+	<div class="content">
+		Publier une annonce
+	</div>
 
-<div class="content">
-	{{ form_start(adForm) }}
-	{{ form_row(adForm.title) }}
-	{{ form_row(adForm.content) }}
-	{{ form_row(adForm.city) }}
-	{{ form_row(adForm.image) }}
-	{{ form_row(adForm.price) }}
-	<button type="submit">Publier</button>
-	{{ form_end(adForm) }}
-<div>
+	<div class="content">
+		{{ form_start(adForm) }}
+		{{ form_row(adForm.title) }}
+		{{ form_row(adForm.content) }}
+		{{ form_row(adForm.city) }}
+		{{ form_row(adForm.image) }}
+		{{ form_row(adForm.price) }}
+		<button type="submit">Publier</button>
+		{{ form_end(adForm) }}
+		<div>
 
-{% endblock %}
+		{% endblock %}

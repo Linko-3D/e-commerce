@@ -3,38 +3,37 @@
 {% block body %}
 
 
-<div class="content">
+	<div class="content">
 
-	<div class="line">
-		{{ ad.title }}
-		
 		<div class="line">
-			<ion-icon class="icon" name="mail-sharp"></ion-icon>
-			Contacter
-		</div>
-		
-	</div>
-	
-	<div class="line">
-		<div>
-			{{ ad.city }}
-		</div>
-		
-		<div class="line">
-			<ion-icon class="icon" name="call-sharp"></ion-icon>
-			06 06 06 06 06
-		</div>
-	</div>
-	
-	
-</div>
+			{{ ad.title }}
 
-<div class="content">
-		<div class="line2">
-				<img class="photo" src="{{ ad.image }}" alt="">
+			<div>
+				<ion-icon class="icon" name="mail-sharp"></ion-icon>
+				Contacter
 			</div>
 
-				<div>{{ ad.content }}</div>
 		</div>
+
+		<div class="line">
+			<div>
+				{{ ad.city }}
+			</div>
+
+			<div>
+				<ion-icon class="icon" name="call-sharp"></ion-icon>
+				06 06 06 06 06
+			</div>
+		</div>
+
+
 	</div>
-</div>{% endblock %}
+
+	<div class="content">
+		<div class="line2">
+			<img class="photo" src="{{ ad.image }}" alt="">
+		</div>
+
+		<div>{{ ad.content }}</div>
+	</div>
+</div></div>{% endblock %}

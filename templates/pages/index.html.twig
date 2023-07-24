@@ -4,7 +4,15 @@
 
 	{% for ad in ads %}
 		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
-			{{ ad.title }}
+			<div class="line">
+
+				<div>{{ ad.title }}</div>
+
+				<div>{{ ad.price }}
+					euros</div>
+
+			</div>
+
 			<img class="photo" src="{{ ad.image }}" alt="Photo annonce">
 			{{ ad.city }}
 		</a>
