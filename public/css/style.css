@@ -16,7 +16,8 @@ body {
 
 body,
 input,
-textarea {
+textarea,
+button {
     background-color: rgb(29, 34, 41);
     color: rgb(224, 224, 224);
     width: 100%;
@@ -61,10 +62,12 @@ nav {
 }
 
 .category:hover,
-select:hover {
+select:hover,
+button:hover {
     cursor: pointer;
     color: white;
     background-color: rgba(255, 255, 255, 0.1);
+
 }
 
 .home {
@@ -164,21 +167,29 @@ img {}
 }
 
 textarea,
-input {
+input,
+button {
     resize: none;
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     padding: 16px 24px 16px 24px;
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
 textarea {
     height: 200px;
-
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
 
+input:focus,
+textarea:focus {
+    border: 2px solid rgb(112, 186, 250);
+    /* Replace #007bff with your desired border color */
+    outline: none;
+    /* Remove default focus outline (optional, but it's recommended to improve accessibility) */
 }

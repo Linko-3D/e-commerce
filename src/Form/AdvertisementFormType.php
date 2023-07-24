@@ -23,7 +23,7 @@ class AdvertisementFormType extends AbstractType
             ->add('price', null, [
                 'label' => 'Prix'
             ])
-            ->add('created_at')
+            // ->add('created_at')
             ->add('city', null, [
                 'label' => 'Ville'
             ]);
