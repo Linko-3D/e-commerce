@@ -128,16 +128,12 @@ select {
 
 .line {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 20px;
     width: 100%;
 }
 
-.line2 {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+.align-center {
+    align-items: center;
 }
 
 .content {

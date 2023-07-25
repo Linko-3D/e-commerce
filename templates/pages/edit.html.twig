@@ -6,11 +6,11 @@
 
 	{# Render the form for editing the advertisement #}
 	{{ form_start(adForm) }}
-	{{ form_row(adForm.title, {'label': 'Titre'}) }}
-	{{ form_row(adForm.content, {'label': 'Description'}) }}
+	{{ form_row(adForm.title) }}
+	{{ form_row(adForm.content) }}
 	{{ form_row(adForm.image) }}
-	{{ form_row(adForm.price, {'label': 'Prix'}) }}
-	{{ form_row(adForm.city, {'label': 'Ville'}) }}
+	{{ form_row(adForm.price) }}
+	{{ form_row(adForm.city) }}
 	<button type="submit">Mettre à jour</button>
 	{{ form_end(adForm) }}
 
