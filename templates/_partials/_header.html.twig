@@ -1,7 +1,11 @@
 <header>
     <nav id="category-nav">
-        <a class="category blue" href="{{ path('home') }}">Accueil</a>
+        <a class="category blue" href="{{ path('home') }}">Reset</a>
         {% include "_partials/_region.html.twig" %}
+        <select name="departments">
+    <option value="recent">Plus récent</option>
+    <option value="recent">Moins cher</option>
+</select>
         <a class="category" href="#">Immobilier</a>
         <a class="category" href="#">Véhicules</a>
         {% if app.user %}
