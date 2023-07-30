@@ -8,9 +8,7 @@
     {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}
-    {% block javascripts %}
-    <script src="{{ asset('app.js') }}"></script>
-    {% endblock %}
+
 </head>
 <body>
 
@@ -43,5 +41,55 @@
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    {% block javascripts %}
+    <script src="{{ asset('app.js') }}"></script>
+    {% endblock %}
+<script>
+    // Get the parent nav element
+    const categoryNav = document.getElementById('category-nav');
+
+    // Function to handle the click event on the parent nav
+    function handleCategoryClick(event) {
+        // Check if the click occurred on a category link
+        if (event.target.classList.contains('category')) {
+            // Prevent the default link behavior
+            event.preventDefault();
+
+            // Remove the "active" class from all category links
+            const categoryLinks = categoryNav.querySelectorAll('.category');
+            categoryLinks.forEach(link => link.classList.remove('active'));
+
+            // Add the "active" class to the clicked category link
+            event.target.classList.add('active');
+
+            // Save the active category link in local storage
+            localStorage.setItem('activeCategory', event.target.getAttribute('href'));
+
+            // Perform any additional actions here, like navigating to the link's href
+            window.location.href = event.target.href;
+        }
+    }
+
+    // Add click event listener to the parent nav
+    categoryNav.addEventListener('click', handleCategoryClick);
+
+    // Restore the active category link from local storage on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const activeCategory = localStorage.getItem('activeCategory');
+        if (activeCategory) {
+            // Add the "active" class to the corresponding category link
+            const categoryLinks = categoryNav.querySelectorAll('.category');
+            categoryLinks.forEach(link => {
+                if (link.getAttribute('href') === activeCategory) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
 </body>
 </html>
