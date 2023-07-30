@@ -20,15 +20,13 @@
         <a class="category" href="#">Immobilier</a>
         <a class="category" href="#">Véhicules</a>
         {% if app.user %}
-        <a class="category red" href="{{ path('app_logout') }}">Se déconnecter</a>
-        <a class="category red" href="{{ path('dashboard') }}">Mes annonces</a>
+        <a class="category red" href="{{ path('dashboard') }}">Mon compte</a>
         <a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
         {% else %}
         <a class="category red" href="{{ path('app_login') }}">Se connecter</a>
         <a class="category green" href="{{ path('app_register') }}">Inscription</a>
         {% endif %}
 
-		<a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
     </nav>
 </header>
 

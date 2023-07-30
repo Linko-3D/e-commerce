@@ -2,10 +2,6 @@
 
 {% block body %}
 
-	<div class="content">
-		Toutes les annonces
-	</div>
-
 	{% for ad in ads %}
 		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
 			<div class="line">

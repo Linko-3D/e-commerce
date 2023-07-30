@@ -2,8 +2,7 @@
 
 {% block body %}
 
-	<h1>Modifier l'annonce</h1>
-
+	<div class="content">
 	{# Render the form for editing the advertisement #}
 	{{ form_start(adForm) }}
 	{{ form_row(adForm.title) }}
@@ -13,10 +12,6 @@
 	{{ form_row(adForm.city) }}
 	<button type="submit">Mettre à jour</button>
 	{{ form_end(adForm) }}
-
-	{# Link to delete the advertisement, similar to the ad.html.twig template #}
-	<div class="content">
-		<a class="red" href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
-	</div>
+</div>
 
 {% endblock %}
