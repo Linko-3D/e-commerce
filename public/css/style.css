@@ -61,6 +61,11 @@ nav {
     outline: none;
 }
 
+.active {
+    color: rgb(112, 186, 250);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .category:hover,
 select:hover,
 button:hover {
@@ -119,13 +124,6 @@ select {
     color: rgb(224, 224, 224);
     gap: 5px;
     flex: 1;
-}
-
-/* Set the width of each card when there are two ads on a line */
-@media (min-width: 768px) {
-    .card {
-        flex-basis: 50%;
-    }
 }
 
 .icon {
@@ -190,19 +188,4 @@ input:focus,
 textarea:focus {
     border: 2px solid rgb(112, 186, 250);
     outline: none;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .container {
-        justify-content: center;
-        /* Center the cards */
-        margin: 0;
-        /* Remove margin */
-    }
-
-    .card {
-        flex-basis: 90%;
-        /* Set the width of each card on smaller screens */
-    }
 }
