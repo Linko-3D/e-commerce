@@ -32,9 +32,14 @@
 				{# <a class="category red" href="#">Connexion</a>
 				<a class="category green" href="#">Inscription</a> #}
 
-				<a class="category red" href="{{ path('app_login') }}">Se connecter</a>
-				<a class="category green" href="{{ path('app_register') }}">Inscription</a>
-				<a class="category red" href="{{ path('app_logout') }}">Se déconnecter</a>
+				{% if app.user %}
+					<a class="category red" href="{{ path('app_logout') }}">Se déconnecter</a>
+					<a class="category red" href="{{ path('dashboard') }}">Mes annonces</a>
+					<a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
+				{% else %}
+					<a class="category red" href="{{ path('app_login') }}">Se connecter</a>
+					<a class="category green" href="{{ path('app_register') }}">Inscription</a>
+				{% endif %}
 				<a class="category red" href="{{ path('dashboard') }}">Mes annonces</a>
 				<a class="category green" href=" {{ path('ad_create') }} ">Publier une annonce</a>
 			</nav>
