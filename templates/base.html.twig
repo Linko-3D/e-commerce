@@ -13,23 +13,8 @@
     {% endblock %}
 </head>
 <body>
-<header>
-    <nav>
-        <a class="category blue" href="{{ path('home') }}">Accueil</a>
-        {% include "_partials/_region.html.twig" %}
-        <a class="category" href="#">Immobilier</a>
-        <a class="category" href="#">Véhicules</a>
-        {% if app.user %}
-        <a class="category red" href="{{ path('dashboard') }}">Mon compte</a>
-        <a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
-        {% else %}
-        <a class="category red" href="{{ path('app_login') }}">Se connecter</a>
-        <a class="category green" href="{{ path('app_register') }}">Inscription</a>
-        {% endif %}
 
-    </nav>
-</header>
-
+{% include "_partials/_header.html.twig" %}
 <div class="padding"></div>
 
 <div class="container">
