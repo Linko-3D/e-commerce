@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}e-commerce
-			{% endblock %}
-		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-		{% endblock %}
-		{% block javascripts %}
-    		<script src="{{ asset('app.js') }}"></script>
-		{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}e-commerce{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+    {% block javascripts %}
+    <script src="{{ asset('app.js') }}"></script>
+    {% endblock %}
+</head>
+<body>
+<header>
+    <nav>
+        <a class="category blue" href="{{ path('home') }}">Accueil</a>
+        {% include "_partials/_region.html.twig" %}
+        <a class="category" href="#">Immobilier</a>
+        <a class="category" href="#">Véhicules</a>
+        {% if app.user %}
+        <a class="category red" href="{{ path('app_logout') }}">Se déconnecter</a>
+        <a class="category red" href="{{ path('dashboard') }}">Mes annonces</a>
+        <a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
+        {% else %}
+        <a class="category red" href="{{ path('app_login') }}">Se connecter</a>
+        <a class="category green" href="{{ path('app_register') }}">Inscription</a>
+        {% endif %}
+    </nav>
+</header>
 
-	</head>
-	<body>
-		<header>
-			<nav>
+<div class="padding"></div>
 
-				<a class="category blue" href="{{ path('home') }}">Accueil</a>
+<div class="container">
+    {% if app.flashes('success') is not empty %}
+        <div class="content green">
+            {% for flashMessage in app.flashes('success') %}
+                Flash Message Success: {{ flashMessage }}
+            {% endfor %}
+        </div>
+    {% endif %}
 
-				{% include "_partials/_region.html.twig" %}
+    {% if app.flashes('error') is not empty %}
+        <div class="content red">
+            {% for flashMessage in app.flashes('error') %}
+                Flash Message Error: {{ flashMessage }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% block body %}{% endblock %}
 
+</div>
 
-				<a class="category" href="#">Immobilier</a>
-				<a class="category" href="#">Véhicules</a>
-				{# <a class="category" href="#">Vacances</a>
-																																												<a class="category" href="#">Mode</a>
-				{# <a class="category red" href="#">Connexion</a>
-				<a class="category green" href="#">Inscription</a> #}
+<div class="padding"></div>
 
-				{% if app.user %}
-					<a class="category red" href="{{ path('app_logout') }}">Se déconnecter</a>
-					<a class="category red" href="{{ path('dashboard') }}">Mes annonces</a>
-					<a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
-				{% else %}
-					<a class="category red" href="{{ path('app_login') }}">Se connecter</a>
-					<a class="category green" href="{{ path('app_register') }}">Inscription</a>
-				{% endif %}
-			</nav>
-		</header>
+<footer>Chat</footer>
 
-		<div class="padding"></div>
-
-		<div class="container"> {% block body %}{% endblock %}
-			</div>
-
-			<div class="padding"></div>
-
-			<footer>Chat</footer>
-
-			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-			<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-		</body>
-	</html>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

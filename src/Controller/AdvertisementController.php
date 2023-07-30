@@ -44,10 +44,12 @@ class AdvertisementController extends AbstractController
             $em->persist($ad);
             $em->flush();
 
-            $this->addFlash('success', 'Annonce publiée');
+            $this->addFlash('success', 'Votre annonce a été publiée');
 
             // Redirect to the route of the newly created advertisement with its ID
             return $this->redirectToRoute('ad_show', ['id' => $ad->getId()]);
+        } else {
+            $this->addFlash('error', 'Erreur, votre annonce n\'a pas pu être publiée');
         }
 
         return $this->render('pages/create.html.twig', [
