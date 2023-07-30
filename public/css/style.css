@@ -119,7 +119,13 @@ select {
     color: rgb(224, 224, 224);
     gap: 5px;
     flex: 1;
-    /* Allow the cards to grow and take full width of the container */
+}
+
+/* Set the width of each card when there are two ads on a line */
+@media (min-width: 768px) {
+    .card {
+        flex-basis: 50%;
+    }
 }
 
 .icon {
@@ -200,5 +206,3 @@ textarea:focus {
         /* Set the width of each card on smaller screens */
     }
 }
-
-
