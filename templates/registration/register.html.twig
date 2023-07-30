@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<div class="content">Inscription</div>
+
+<div class="content">Vous inscrire vous permet de publier des annonces, d'envoyer des messages privés et de mettre des annonces en favoris.
 
     {{ form_errors(registrationForm) }}
 
@@ -16,4 +18,6 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+
+</div>
 {% endblock %}
