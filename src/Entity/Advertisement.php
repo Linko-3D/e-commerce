@@ -32,6 +32,9 @@ class Advertisement
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
+    #[ORM\Column]
+    private ?int $Region = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Advertisement
     public function setCity(string $city): static
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getRegion(): ?int
+    {
+        return $this->Region;
+    }
+
+    public function setRegion(int $Region): static
+    {
+        $this->Region = $Region;
 
         return $this;
     }

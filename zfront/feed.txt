@@ -15,28 +15,29 @@ php bin/console doctrine:migrations:migrate
 
 
 
-INSERT INTO advertisement (title, content, image, created_at, price, city)
+INSERT INTO advertisement (title, content, image, created_at, price, city, region)
 VALUES 
-    ('Title 1', 'Content 1', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 100, 'City 1'),
-    ('Title 2', 'Content 2', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 200, 'City 2'),
-    ('Title 3', 'Content 3', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 150, 'City 3'),
-    ('Title 4', 'Content 4', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 300, 'City 4'),
-    ('Title 5', 'Content 5', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 250, 'City 5'),
-    ('Title 6', 'Content 6', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 180, 'City 6'),
-    ('Title 7', 'Content 7', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 210, 'City 7'),
-    ('Title 8', 'Content 8', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 190, 'City 8'),
-    ('Title 9', 'Content 9', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 280, 'City 9'),
-    ('Title 10', 'Content 10', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 230, 'City 10'),
-    ('Title 11', 'Content 11', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 150, 'City 11'),
-    ('Title 12', 'Content 12', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 320, 'City 12'),
-    ('Title 13', 'Content 13', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 270, 'City 13'),
-    ('Title 14', 'Content 14', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 400, 'City 14'),
-    ('Title 15', 'Content 15', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 350, 'City 15'),
-    ('Title 16', 'Content 16', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 220, 'City 16'),
-    ('Title 17', 'Content 17', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 260, 'City 17'),
-    ('Title 18', 'Content 18', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 290, 'City 18'),
-    ('Title 19', 'Content 19', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 210, 'City 19'),
-    ('Title 20', 'Content 20', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 180, 'City 20');
+    ('Title 1', 'Content 1', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 100, 'City 1', FLOOR(RAND() * 95) + 1),
+    ('Title 2', 'Content 2', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 200, 'City 2', FLOOR(RAND() * 95) + 1),
+    ('Title 3', 'Content 3', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 150, 'City 3', FLOOR(RAND() * 95) + 1),
+    ('Title 4', 'Content 4', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 300, 'City 4', FLOOR(RAND() * 95) + 1),
+    ('Title 5', 'Content 5', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 250, 'City 5', FLOOR(RAND() * 95) + 1),
+    ('Title 6', 'Content 6', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 180, 'City 6', FLOOR(RAND() * 95) + 1),
+    ('Title 7', 'Content 7', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 210, 'City 7', FLOOR(RAND() * 95) + 1),
+    ('Title 8', 'Content 8', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 190, 'City 8', FLOOR(RAND() * 95) + 1),
+    ('Title 9', 'Content 9', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 280, 'City 9', FLOOR(RAND() * 95) + 1),
+    ('Title 10', 'Content 10', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 230, 'City 10', FLOOR(RAND() * 95) + 1),
+    ('Title 11', 'Content 11', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 150, 'City 11', FLOOR(RAND() * 95) + 1),
+    ('Title 12', 'Content 12', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 320, 'City 12', FLOOR(RAND() * 95) + 1),
+    ('Title 13', 'Content 13', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 270, 'City 13', FLOOR(RAND() * 95) + 1),
+    ('Title 14', 'Content 14', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 400, 'City 14', FLOOR(RAND() * 95) + 1),
+    ('Title 15', 'Content 15', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 350, 'City 15', FLOOR(RAND() * 95) + 1),
+    ('Title 16', 'Content 16', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 220, 'City 16', FLOOR(RAND() * 95) + 1),
+    ('Title 17', 'Content 17', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 260, 'City 17', FLOOR(RAND() * 95) + 1),
+    ('Title 18', 'Content 18', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 290, 'City 18', FLOOR(RAND() * 95) + 1),
+    ('Title 19', 'Content 19', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 210, 'City 19', FLOOR(RAND() * 95) + 1),
+    ('Title 20', 'Content 20', 'https://placehold.co/400x300', CURRENT_TIMESTAMP, 180, 'City 20', FLOOR(RAND() * 95) + 1);
+
 
 
 

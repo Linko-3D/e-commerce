@@ -2,35 +2,36 @@
 
 {% block body %}
 
-	<div class="content">
-		<a href="{{ path('ad_edit', {'id': ad.id}) }}">Modifier</a>
-	</div>
+<div class="content">
+	<a href="{{ path('ad_edit', {'id': ad.id}) }}">Modifier</a>
+</div>
 
-	<div class="content">
-		<a class="red" href="{{ path('ad_delete', {'id': ad.id}) }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
-	</div>
+<div class="content">
+	<a class="red" href="{{ path('ad_delete', {'id': ad.id}) }}"
+		onclick="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette annonce ?')">Supprimer</a>
+</div>
 
-	<div class="content">
-		<div class="line">
-			<div>{{ ad.title }}</div>
+<div class="content">
+	<div class="line">
+		<div>{{ ad.title }}</div>
 
-			<div>
-				<ion-icon class="icon" name="mail-sharp"></ion-icon>
-				Contacter
-			</div>
-		</div>
-
-		<div class="line">
-			<div>
-				{{ ad.city }}
-			</div>
-
-			<div>
-				<ion-icon class="icon" name="call-sharp"></ion-icon>
-				06 06 06 06 06
-			</div>
+		<div>
+			<ion-icon class="icon" name="mail-sharp"></ion-icon>
+			Contacter
 		</div>
 	</div>
+
+	<div class="line">
+		<div>
+			{{ ad.region }}
+		</div>
+
+		<div>
+			<ion-icon class="icon" name="call-sharp"></ion-icon>
+			06 06 06 06 06
+		</div>
+	</div>
+</div>
 
 <div class="content">
 	<div class="line">
