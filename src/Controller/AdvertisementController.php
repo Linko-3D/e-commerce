@@ -17,12 +17,18 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class AdvertisementController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function home(AdvertisementRepository $repo): Response
+    public function home(Request $request, AdvertisementRepository $repo): Response
     {
-        $advertisements = $repo->findBy([], ['id' => 'DESC']);
+        $sortOption = $request->query->get('sort', 'recent');
+        if ($sortOption === 'cheapest') {
+            $advertisements = $repo->findBy([], ['price' => 'ASC']);
+        } else {
+            $advertisements = $repo->findBy([], ['id' => 'DESC']);
+        }
 
         return $this->render('pages/index.html.twig', [
-            'ads' => $advertisements
+            'ads' => $advertisements,
+            'selectedSortOption' => $sortOption,
         ]);
     }
 
