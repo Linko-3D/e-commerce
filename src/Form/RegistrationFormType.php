@@ -1,4 +1,5 @@
 <?php
+# RegistrationFormType.php
 
 namespace App\Form;
 

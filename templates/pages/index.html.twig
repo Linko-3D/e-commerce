@@ -1,3 +1,5 @@
+# index.html.twig
+
 {% extends 'base.html.twig' %}
 
 {% block body %}
@@ -8,8 +10,18 @@
 			<option value="recent" {% if selectedSortOption=='recent' %} selected{% endif %}>Plus récent</option>
 			<option value="cheapest" {% if selectedSortOption=='cheapest' %} selected{% endif %}>Moins cher</option>
 		</select>
-		<a class="category" href="#">Immobilier</a>
-		<a class="category" href="#">Véhicules</a>
+		{# <a class="category" href="#">Immobilier</a>
+		<a class="category" href="#">Véhicules</a> #}
+		<a class="category" href="#">Africaine</a>
+		<a class="category" href="#">Arabe</a>
+		<a class="category" href="#">Asiatique</a>
+		<a class="category" href="#">Caucasienne</a>
+		<a class="category" href="#">Hispanique</a>
+
+		{# <form>
+        <label for="option1">Option 1</label>
+        <input type="checkbox" id="option1" name="option" value="Option 1">
+		</form> #}
 	</div>
 	
 	{% for ad in ads %}

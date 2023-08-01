@@ -1,4 +1,5 @@
 <?php
+# Advertisement.php
 
 namespace App\Entity;
 
