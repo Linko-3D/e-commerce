@@ -19,10 +19,8 @@
 
 {% for ad in ads %}
     <a href="{{ path('ad_show', {'id': ad.id}) }}" class="card">
-        <div class="line">
             <div>{{ ad.title }}</div>
-            <div>{{ ad.price }} euros</div>
-        </div>
+            {# <div>{{ ad.price }} euros</div> #}
         {% if ad.imageFilename %}
             <img class="photo" src="{{ asset('uploads/images/' ~ ad.imageFilename) }}" alt="Photo annonce">
         {% else %}

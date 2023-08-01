@@ -32,6 +32,10 @@ footer,
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
+.content {
+    width: 100%;
+}
+
 option {
     background-color: rgb(54, 61, 74);
 }
@@ -135,29 +139,11 @@ select {
     display: flex;
     gap: 20px;
     width: 100%;
+    justify-content: space-between;
+    /* Align the items to the left and right edges of the container */
 }
 
-.align-center {
-    align-items: center;
-}
 
-.content {
-    width: 100%;
-    padding: 5px;
-    border-radius: 4px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.infos {
-    display: flex;
-    align-items: center;
-}
-
-img {}
 
 .photo {
     width: 230px;
