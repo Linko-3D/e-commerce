@@ -28,7 +28,6 @@ header,
 footer,
 .card,
 .content {
-    background-color: rgb(54, 61, 74);
     background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
@@ -114,9 +113,7 @@ select {
     flex-wrap: wrap;
     gap: 20px;
     max-width: 1200px;
-    /* Set a maximum width for the container */
     margin: 0 auto;
-    /* Horizontally center the container */
 }
 
 .card {
@@ -163,8 +160,8 @@ select {
 img {}
 
 .photo {
-    width: 400px;
-    height: 300px;
+    width: 230px;
+    height: 340px;
     object-fit: cover;
 }
 
