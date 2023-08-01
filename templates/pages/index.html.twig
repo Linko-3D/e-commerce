@@ -1,44 +1,39 @@
-# index.html.twig
-
 {% extends 'base.html.twig' %}
 
 {% block body %}
 
-	<div class="content">
-		{% include "_partials/_region.html.twig" %}
-		<select name="sort" onchange="handleSortChange(this)">
-			<option value="recent" {% if selectedSortOption=='recent' %} selected{% endif %}>Plus récent</option>
-			<option value="cheapest" {% if selectedSortOption=='cheapest' %} selected{% endif %}>Moins cher</option>
-		</select>
-		{# <a class="category" href="#">Immobilier</a>
-		<a class="category" href="#">Véhicules</a> #}
-		<a class="category" href="#">Africaine</a>
-		<a class="category" href="#">Arabe</a>
-		<a class="category" href="#">Asiatique</a>
-		<a class="category" href="#">Caucasienne</a>
-		<a class="category" href="#">Hispanique</a>
+<div class="content">
+    {% include "_partials/_region.html.twig" %}
+    <select name="sort" onchange="handleSortChange(this)">
+        <option value="recent" {% if selectedSortOption == 'recent' %}selected{% endif %}>Plus récent</option>
+        <option value="cheapest" {% if selectedSortOption == 'cheapest' %}selected{% endif %}>Moins cher</option>
+    </select>
 
-		{# <form>
+    <a class="category" href="#">Africaine</a>
+    <a class="category" href="#">Arabe</a>
+    <a class="category" href="#">Asiatique</a>
+    <a class="category" href="#">Caucasienne</a>
+    <a class="category" href="#">Hispanique</a>
+
+    {# <form>
         <label for="option1">Option 1</label>
         <input type="checkbox" id="option1" name="option" value="Option 1">
-		</form> #}
-	</div>
-	
-	{% for ad in ads %}
-		<a href="{{ path('ad_show' , {'id':ad.id}) }}" class="card">
-			<div class="line">
+    </form> #}
+</div>
 
-				<div>{{ ad.title }}</div>
-
-				<div>{{ ad.price }}
-					euros</div>
-
-			</div>
-
-			<img class="photo" src="{{ ad.image }}" alt="Photo annonce">
-			{{ ad.region }}
-		</a>
-
-	{% endfor %}
+{% for ad in ads %}
+    <a href="{{ path('ad_show', {'id': ad.id}) }}" class="card">
+        <div class="line">
+            <div>{{ ad.title }}</div>
+            <div>{{ ad.price }} euros</div>
+        </div>
+        {% if ad.imageFilename %}
+            <img class="photo" src="{{ asset('uploads/images/' ~ ad.imageFilename) }}" alt="Photo annonce">
+        {% else %}
+            <img class="photo" src="{{ asset('path/to/default/image.jpg') }}" alt="Photo annonce">
+        {% endif %}
+        {{ ad.region }}
+    </a>
+{% endfor %}
 
 {% endblock %}

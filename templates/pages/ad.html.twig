@@ -35,10 +35,9 @@
 
 <div class="content">
 	<div class="line">
-		<img class="photo" src="{{ ad.image }}" alt="">
+		<img class="photo" src="{{ asset('uploads/images/' ~ ad.imageFilename) }}" alt="">
 		<div>{{ ad.content }}</div>
 	</div>
 </div>
-
 
 {% endblock %}

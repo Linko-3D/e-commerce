@@ -1,18 +1,19 @@
 <?php
-# AdvertisementController.php
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Advertisement;
-use App\Repository\AdvertisementRepository;
 use App\Form\AdvertisementFormType;
+use App\Repository\AdvertisementRepository;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdvertisementController extends AbstractController
@@ -43,8 +44,26 @@ class AdvertisementController extends AbstractController
         $adForm->handleRequest($request);
 
         if ($adForm->isSubmitted() && $adForm->isValid()) {
-            // $slug = $slugger->slug($ad->getTitle());
-            // $ad->setSlug($slug);
+            // Handle image upload
+            /** @var UploadedFile $imageFile */
+            $imageFile = $adForm->get('imageFile')->getData();
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+
+                try {
+                    $imageFile->move(
+                        $this->getParameter('image_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // Handle the exception if something goes wrong during file upload
+                    // For example, display an error message or log the error
+                }
+
+                $ad->setImageFilename($newFilename);
+            }
 
             $ad->setCreatedAt(new DateTimeImmutable('now'));
 
@@ -75,14 +94,11 @@ class AdvertisementController extends AbstractController
     #[Route('/ad/{id}/delete', name: 'ad_delete')]
     public function delete(Advertisement $advertisement, EntityManagerInterface $em): Response
     {
-        // Delete the advertisement
         $em->remove($advertisement);
         $em->flush();
 
-        // Set a flash message for success
         $this->addFlash('success', 'Annonce supprimée');
 
-        // Redirect to the home page after successful deletion
         return $this->redirectToRoute('home');
     }
 
@@ -93,13 +109,34 @@ class AdvertisementController extends AbstractController
     }
 
     #[Route('/ad/{id}/edit', name: 'ad_edit')]
-    public function edit(Request $request, Advertisement $advertisement, EntityManagerInterface $em): Response
+    public function edit(Request $request, Advertisement $advertisement, EntityManagerInterface $em, SluggerInterface $slugger): Response
     {
         $adForm = $this->createForm(AdvertisementFormType::class, $advertisement);
 
         $adForm->handleRequest($request);
 
         if ($adForm->isSubmitted() && $adForm->isValid()) {
+            // Handle image upload when editing the advertisement
+            /** @var UploadedFile $imageFile */
+            $imageFile = $adForm->get('imageFile')->getData();
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+
+                try {
+                    $imageFile->move(
+                        $this->getParameter('image_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // Handle the exception if something goes wrong during file upload
+                    // For example, display an error message or log the error
+                }
+
+                $advertisement->setImageFilename($newFilename);
+            }
+
             $em->flush();
 
             $this->addFlash('success', 'Annonce mise à jour');
