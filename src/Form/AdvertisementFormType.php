@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType; // Add this import for file uploads
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\GreaterThanOrEqual; // Add this import for the constraint
 
 class AdvertisementFormType extends AbstractType
 {
@@ -30,7 +31,13 @@ class AdvertisementFormType extends AbstractType
                 'required' => false, // Set 'required' to false to allow empty uploads
             ])
             ->add('price', IntegerType::class, [
-                'label' => 'Prix'
+                'label' => 'Prix',
+                'constraints' => [
+                    new GreaterThanOrEqual([
+                        'value' => 0,
+                        'message' => 'Le prix doit être supérieur ou égal à 0.'
+                    ]),
+                ],
             ])
             ->add('region', IntegerType::class, [
                 'label' => 'Département'
