@@ -64,6 +64,7 @@ nav {
 
 .category {
     color: rgb(224, 224, 224);
+    padding: 16px 24px 16px 24px;
     outline: none;
 }
 
@@ -158,11 +159,11 @@ button {
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-.category,
 textarea,
 input,
 button,
-select {
+select,
+.content {
         padding: 16px 24px 16px 24px;
 }
 
