@@ -7,15 +7,19 @@ use App\Entity\Advertisement;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\FileType; // Add this import for file uploads
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\GreaterThanOrEqual; // Add this import for the constraint
+use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Component\Validator\Constraints\Image; // Add this import for image validation
+use Symfony\Component\Validator\Context\ExecutionContextInterface; // Add this import for ExecutionContextInterface
 
 class AdvertisementFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $isNewAdvertisement = $builder->getData() instanceof Advertisement && null === $builder->getData()->getId();
+
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Titre'
@@ -26,9 +30,14 @@ class AdvertisementFormType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'Ville'
             ])
-            ->add('imageFile', FileType::class, [ // Use FileType::class for file uploads
-                'label' => 'Image', // Add a label for the file input
-                'required' => false, // Set 'required' to false to allow empty uploads
+            ->add('imageFile', FileType::class, [
+                'label' => 'Image',
+                'required' => $isNewAdvertisement, // Image is required when creating a new ad
+                'constraints' => [
+                    new Image([ // Add image validation constraint
+                        'maxSize' => '5M', // Set the maximum allowed image size
+                    ]),
+                ],
             ])
             ->add('price', IntegerType::class, [
                 'label' => 'Prix',
@@ -51,3 +60,6 @@ class AdvertisementFormType extends AbstractType
         ]);
     }
 }
+
+
+?>

@@ -150,3 +150,5 @@ class AdvertisementController extends AbstractController
         ]);
     }
 }
+
+?>
