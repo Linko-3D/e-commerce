@@ -13,6 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 use Symfony\Component\Validator\Constraints\Image; // Add this import for image validation
 use Symfony\Component\Validator\Context\ExecutionContextInterface; // Add this import for ExecutionContextInterface
+use Symfony\Component\Validator\Constraints\Length; // Add this import for length validation
 
 class AdvertisementFormType extends AbstractType
 {
@@ -22,13 +23,31 @@ class AdvertisementFormType extends AbstractType
 
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre'
+                'label' => 'Titre',
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Le titre doit faire au moins {{ limit }} caractères.',
+                    ]),
+                ],
             ])
             ->add('content', TextType::class, [
-                'label' => 'Description'
+                'label' => 'Description',
+                'constraints' => [
+                    new Length([
+                        'min' => 100,
+                        'minMessage' => 'La description doit faire au moins {{ limit }} caractères.',
+                    ]),
+                ],
             ])
             ->add('city', TextType::class, [
-                'label' => 'Ville'
+                'label' => 'Ville',
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'La ville doit faire au moins {{ limit }} caractères.',
+                    ]),
+                ],
             ])
             ->add('imageFile', FileType::class, [
                 'label' => 'Image',
@@ -44,12 +63,12 @@ class AdvertisementFormType extends AbstractType
                 'constraints' => [
                     new GreaterThanOrEqual([
                         'value' => 0,
-                        'message' => 'Le prix doit être supérieur ou égal à 0.'
+                        'message' => 'Le prix doit être supérieur ou égal à 0.',
                     ]),
                 ],
             ])
             ->add('region', IntegerType::class, [
-                'label' => 'Département'
+                'label' => 'Département',
             ]);
     }
 
@@ -60,6 +79,3 @@ class AdvertisementFormType extends AbstractType
         ]);
     }
 }
-
-
-?>
