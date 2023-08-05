@@ -1,3 +1,5 @@
+{# login.html.twig #}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
@@ -6,10 +8,10 @@
 
 <div class="content">
 
-
 <form method="post">
     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <!-- Replace the translation key with the custom error message -->
+        <div class="alert alert-danger">{{ error.message }}</div>
     {% endif %}
 
     {% if app.user %}
@@ -18,7 +20,7 @@
         </div>
     {% endif %}
 
-    {# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> #}
+    {# Rest of the form remains unchanged #}
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     <label for="inputPassword">Mot de passe</label>

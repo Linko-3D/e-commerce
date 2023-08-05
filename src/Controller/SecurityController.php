@@ -1,10 +1,13 @@
 <?php
 
+// SecurityController.php
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
@@ -18,6 +21,13 @@ class SecurityController extends AbstractController
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
+        
+        // Replace the "Invalid credentials." message with your custom message
+        if ($error) {
+            $errorMessage = "Email ou mot de passe incorrect";
+            $error = new AuthenticationException($errorMessage);
+        }
+
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
