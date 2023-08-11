@@ -17,8 +17,12 @@ header, .card {
     background-color: rgb(54, 61, 74);
 }
 
+header{
+    display: flex;
+    justify-content: center;
+}
+
 .card {
-    width: 30%;
 }
 
 .container {

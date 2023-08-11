@@ -4,15 +4,16 @@
 
 {% block body %}
 
+<div class="container">
 {% for advertisement in advertisements %}
 
-<div class="container">
-<div class="card">
-{{ advertisement.title }}
-</div>
-</div>
+
+    <div class="card">
+    {{ advertisement.title }}
+    </div>
 
 {% endfor %}
+</div>
     {# <h1>Advertisement index</h1>
 
     <table class="table">
