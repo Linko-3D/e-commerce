@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advertisement index{% endblock %}
+
+{% block body %}
+
+{% for advertisement in advertisements %}
+
+<div class="container">
+<div class="card">
+{{ advertisement.title }}
+</div>
+</div>
+
+{% endfor %}
+    {# <h1>Advertisement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>ImageFilename</th>
+                <th>Created_at</th>
+                <th>Price</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for advertisement in advertisements %}
+            <tr>
+                <td>{{ advertisement.id }}</td>
+                <td>{{ advertisement.title }}</td>
+                <td>{{ advertisement.content }}</td>
+                <td>{{ advertisement.imageFilename }}</td>
+                <td>{{ advertisement.createdAt ? advertisement.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ advertisement.price }}</td>
+                <td>{{ advertisement.city }}</td>
+                <td>{{ advertisement.Region }}</td>
+                <td>
+                    <a href="{{ path('app_advertisement_show', {'id': advertisement.id}) }}">show</a>
+                    <a href="{{ path('app_advertisement_edit', {'id': advertisement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_advertisement_new') }}">Create new</a> #}
+{% endblock %}

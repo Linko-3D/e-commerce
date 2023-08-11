@@ -13,8 +13,17 @@ body {
     background-color: rgb(29, 34, 41);
 }
 
-header {
+header, .card {
     background-color: rgb(54, 61, 74);
+}
+
+.card {
+    width: 30%;
+}
+
+.container {
+    display: flex;
+    background-color: red;
 }
 
 .red {
