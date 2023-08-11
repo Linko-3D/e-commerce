@@ -13,59 +13,12 @@
 <body>
 
 <header>
-    <nav id="category-nav">
-        <a class="category blue" href="{{ path('home') }}">Accueil</a>
+<a class="red" href="{{ path('app_login') }}">Connexion</a>
+<a class="green" href="{{ path('app_register') }}">Inscription</a>
 
-        {% if app.user %}
-        <a class="category red" href="{{ path('dashboard') }}">Mon compte</a>
-        <a class="category green" href="{{ path('ad_create') }}">Publier une annonce</a>
-        {% else %}
-        <a class="category red" href="{{ path('app_login') }}">Se connecter</a>
-        <a class="category green" href="{{ path('app_register') }}">Inscription</a>
-        {% endif %}
-    </nav>
 </header>
 
-<div class="padding"></div>
-
-<div class="container">
-    {% if app.flashes('success') is not empty %}
-        <div class="content green">
-            {% for flashMessage in app.flashes('success') %}
-                Flash Message Success: {{ flashMessage }}
-            {% endfor %}
-        </div>
-    {% endif %}
-
-    {% if app.flashes('error') is not empty %}
-        <div class="content red">
-            {% for flashMessage in app.flashes('error') %}
-                Flash Message Error: {{ flashMessage }}
-            {% endfor %}
-        </div>
-    {% endif %}
-    
     {% block body %}{% endblock %}
-
-</div>
-
-<div class="padding"></div>
-
-<footer>Chat</footer>
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    {% block javascripts %}
-    <script src="{{ asset('app.js') }}"></script>
-    {% endblock %}
-<script>
-    function handleSortChange(select) {
-        const selectedOption = select.value;
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('sort', selectedOption);
-        window.location.href = currentUrl.toString();
-    }
-</script>
 
 </body>
 </html>

@@ -10,175 +10,25 @@
 
 body {
     color: rgb(224, 224, 224);
-    font-weight: 700;
-    text-align: justify;
-}
-
-body,
-input,
-textarea,
-button {
     background-color: rgb(29, 34, 41);
-    color: rgb(224, 224, 224);
-    width: 100%;
-    border: none;
-}
-
-header,
-footer,
-.card,
-.content {
-    background-image: linear-gradient(to bottom, rgb(76, 82, 94), rgb(54, 61, 74));
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-.content {
-    width: 100%;
-}
-
-option {
-    background-color: rgb(54, 61, 74);
 }
 
 header {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 1000;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.category {
-    color: rgb(224, 224, 224);
-    padding: 16px 24px 16px 24px;
-    outline: none;
-}
-
-.active {
-    color: rgb(112, 186, 250);
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
-.category:hover,
-select:hover,
-button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.blue {
-    color: rgb(141, 165, 243);
-}
-
-.green {
-    color: rgb(142, 239, 151);
+    background-color: rgb(54, 61, 74);
 }
 
 .red {
     color: rgb(252, 127, 127);
 }
 
-a {
-    color: rgb(112, 186, 250);
+.green {
     color: rgb(142, 239, 151);
+}
+
+.blue {
+    color: rgb(141, 165, 243);
+}
+
+a {
     text-decoration: none;
-}
-
-select {
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(224, 224, 224);
-    border: none;
-    font-weight: 700;
-}
-
-.padding {
-    height: 200px;
-    height: 80px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 4px;
-    padding: 5px;
-    color: rgb(224, 224, 224);
-    gap: 5px;
-    flex: 1;
-}
-
-.icon {
-    font-size: 1.5rem;
-}
-
-.line {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    justify-content: space-between;
-    /* Align the items to the left and right edges of the container */
-}
-
-
-
-.photo {
-    width: 230px;
-    height: 340px;
-    object-fit: cover;
-}
-
-textarea,
-input,
-button {
-    resize: none;
-    font-weight: 700;
-    font-family: "Poppins", sans-serif;
-    border: 2px solid rgba(0, 0, 0, 0);
-}
-
-textarea,
-input,
-button,
-select,
-.content {
-        padding: 16px 24px 16px 24px;
-}
-
-textarea {
-    height: 200px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-input:focus,
-textarea:focus {
-    border: 2px solid rgb(112, 186, 250);
-    outline: none;
 }
